@@ -1,20 +1,17 @@
 var currentDate = moment().format("LLLL");
     console.log(currentDate);
-    // $("#currentDay").append(currentDate);
-
-var saveBtn = $(".saveBtn");
+    $(".lead").append(currentDate);
 
 $(".saveBtn").on("click", function(){
     console.log("I have clicked the button");
     //grab the value, and the time, set both to separate variables and tell it to grab
     var thisVal = $(this).attr(".description");
     var thisBlock = $(this).attr(".time-block");
-    localStorage.setItem(thisVal, thisBlock);
+    localStorage.setItem(thisVal, JSON.stringify("thisVal"));
+    localstorage.setItem(thisBlock, JSON.stringify("thisBlock"));
     //the information (this) grab description in one variable and time in another, and set
 //     to local storage
 });
-
-
 
 
 function hourUpdater(){
